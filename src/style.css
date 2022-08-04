@@ -1,0 +1,60 @@
+*,*::before, *::after{
+    box-sizing: border-box;
+}
+
+body{
+    margin: 0;
+    background: linear-gradient(to right, #00AAFF, #00FF6C); /*background color eka*/
+
+}
+
+.calculator-grid{ /*calculator eka style karanawaa*/
+
+    display: grid; /*grid ekak hadagena ekata type karapu number tika dagannawa*/
+    margin-top: 2rem; /*top eke margin eka hadagannwa*/
+    justify-content: center; /*Calculator grid eka page eke center ekata ganna*/
+    grid-template-columns: repeat(4, 6rem);/*peli 4ra 4ra hadagannawa box athara 6rem line ekak thiyenawa*/
+    grid-template-rows: minmax(7rem, auto) repeat(5, 6rem); /*anka thiyena grid lokuwata hadagnnawaa*/
+
+}
+
+.calculator-grid > button{
+    cursor: pointer; /*button wala ilakkam medata dagannawa*/
+    font-size: 2rem;
+    border: 1px solid white;
+    outline: none;
+    background-color: rgba(255, 255, 255, .75); /*button color eka*/
+}
+
+.calculator-grid > button:hover,
+.calculator-grid > button:focus{/*button eka udata mouse eka yanaavita color eka wenas wennai click kalama color eka wenas wennai danawa*/
+background-color: rgba(255, 255, 255, .9);
+}
+
+.span-two{
+    grid-column: span 2; /*AC and = button vishala karanna*/
+
+}
+
+.output{
+    grid-column: 1 / -1; /*output ekata eka samana idak wen karaganawa*/
+    background-color: rgba(0, 0, 0, .75); /*Output background color eka dagannawa*/
+    display: flex;
+    flex-direction: column; /*enter karana ewa eka thiruwakath answere thawa thiruwakatath daganna*/
+    align-items: flex-end; /*right side ekata input output tika daganna*/
+    justify-content: space-around; /*input output athara space ekak dagannawa*/
+    word-wrap: break-word; /*ilakkam comma walin wen karanna*/
+    word-break: break-all;
+}
+ 
+.output .previous-operand{ /*output eke enter karana number wala style kirima sadaha*/
+    color: rgba(255, 255, 255, .75);
+    font-size: 1.5rem;
+
+}
+
+.output .current-operand{ /*output eke answre vidiyata ena number wala style kirima sadaha*/
+    color: white;
+    font-size: 2.5rem;
+
+}
